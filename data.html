@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      {{title}}
+    </title>
+  </head>
+  <body>
+    <h1>
+      {{heading}}
+    </h1>
+    <p>
+      {{something}}
+    </p>
+    {% if status_flag %}
+    <table border="1">
+      <tr>
+        {% for i in column_title_list %}
+        <th>
+          {{i}}
+        </th>
+        {% endfor %}
+      </tr>
+      {% for row in data %}
+      <tr>
+        {% for cell in row %}
+        <td>
+          {{cell}}
+        </td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+      {% if flag_s %}
+      <tr>
+        <td align="center" colspan="2">
+          Total Marks
+        </td>
+        <td>
+          {{total}}
+        </td>
+        {% endif %}
+      </tr>
+      {% endif %}
+    </table>
+    {% if flag_c %}
+    <img height="300" src="{{image}}" width="400"/>
+    {% endif %}
+    <br>
+    <a href="/">Go back</a>
+  </body>
+</html>
